@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS_COMMON = -g -std=c99 -Wno-deprecated-declarations
 
 EXAMPLES_SRC = $(wildcard examples/*/*.c)
-CHALLENGES_SRC = $(wildcard challenges/*/*.c)
+CHALLENGES_SRC = $(wildcard challenges/*/*/*.c)
 
 EXAMPLES_BIN = $(EXAMPLES_SRC:.c=)
 CHALLENGES_BIN = $(CHALLENGES_SRC:.c=)
