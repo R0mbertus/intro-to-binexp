@@ -1,18 +1,23 @@
 #include <stdio.h>
 #include <string.h>
-#include <unistd.h>
 
-void win(void) { 
-    printf("win!\n"); 
+void win(void) {
+    struct {
+        char password[8];
+        int admin;
+    } local;
+
+    if (local.admin == 21)
+        printf("win!\n"); 
+}
+
+void work(void) {
+    char buffer[16];
+    memset(buffer, 0, 16);
+    gets(buffer);
 }
 
 int main(void) {
-    char username[16];
-    char password[16];
-
-    scanf("%16s", username);
-    scanf("%16s", password);
-
-    char results[32];
-    sprintf(results, "%s, %s", username, password);
+    work();
+    win();
 }

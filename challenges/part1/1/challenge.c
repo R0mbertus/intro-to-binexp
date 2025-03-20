@@ -1,11 +1,19 @@
 #include <stdio.h>
 
 int main(void) {
-    char a, b, c, d;
+    struct {
+        char a;
+        char b;
+        char c;
+        char d;
+    } locals;
 
     printf("Enter the keycode: ");
-    scanf("%d %d %d %d", &a, &b, &c, &d);
+    scanf("%d %d %d %d", &locals.a, &locals.b, &locals.c, &locals.d);
 
-    if (*(int *)&d == 0xDEADBEEF)
+    // printf("\ninput: %d %d %d %d\n", a, b, c, d);
+    printf("\ninput: %lX\n", *(int *)&locals.a);
+
+    if (*(int *)&locals.a == 0xDEADBEEF)
         printf("win!\n");
 }

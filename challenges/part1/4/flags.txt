@@ -1,1 +1,0 @@
--no-pie -fno-stack-protector
