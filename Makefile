@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS_COMMON = -g
+CFLAGS_COMMON = -g -std=c99 -Wno-deprecated-declarations
 
 EXAMPLES_SRC = $(wildcard examples/*/*.c)
 CHALLENGES_SRC = $(wildcard challenges/*/*.c)
@@ -23,6 +23,3 @@ challenges: $(CHALLENGES_BIN)
 
 challenges/%: challenges/%.c
 	$(CC) $(CFLAGS_COMMON) $(call get_flags,$<) $< -o $@
-
-clean:
-	@find examples challenges -type f -executable -exec rm -f {} +
