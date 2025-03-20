@@ -17,11 +17,11 @@ int main(void) {
 
     if (locals.index > 3 || locals.index < 0) {
         printf("Invalid index!\n");
-        return;
+        return 1;
     }
 
     printf("Enter number to put in array: ");
-    fgets((char *)&locals.input, 9, stdin);
+    fgets((char *)&locals.input, 12, stdin);
 
     locals.result[locals.index] = locals.input;
 }
