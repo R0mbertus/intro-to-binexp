@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 void win(void) { 
     printf("win!\n"); 
@@ -7,13 +8,13 @@ void win(void) {
 int main(void) {
     // Struct to ensure ordering ;)
     struct {
-        long long int input;
-        int index;
+        char input[8];
+        char index;
         long long int result[4];
     } locals;
 
     printf("Enter index to edit into: ");
-    scanf("%ld", locals.index);
+    scanf("%d *[^\n]", &locals.index);
 
     if (locals.index > 3 || locals.index < 0) {
         printf("Invalid index!\n");
@@ -21,7 +22,7 @@ int main(void) {
     }
 
     printf("Enter number to put in array: ");
-    fgets((char *)&locals.input, 12, stdin);
+    fgets(locals.input, 10, stdin);
 
-    locals.result[locals.index] = locals.input;
+    locals.result[locals.index] = *(long long *)&locals.input;
 }

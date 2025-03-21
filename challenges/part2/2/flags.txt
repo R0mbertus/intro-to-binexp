@@ -1,1 +1,1 @@
--no-pie -fno-stack-protector
+-no-pie -Wno-stringop-overflow -fstack-protector

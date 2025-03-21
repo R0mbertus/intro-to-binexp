@@ -17,5 +17,6 @@ void gadgets(void) {
 
 int main(void) {
     char buffer[16];
+    printf("%lX\n", &buffer);
     gets(buffer);
 }
